@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的簡單網站</title>
+    <style>
+      /* 基礎樣式重設 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, "Microsoft JhengHei";
+      }
+
+      body {
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+      }
+
+      /* 導覽列 */
+      header {
+        background-color: #ffffff;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2563eb;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 20px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #2563eb;
+      }
+
+      /* 主視覺區域 */
+      .hero {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        padding: 160px 20px 100px 20px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        color: #4b5563;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #2563eb;
+        color: #fff;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #1d4ed8;
+      }
+
+      /* 內容區塊通用樣式 */
+      .section {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 32px;
+        color: #1f2937;
+        margin-bottom: 40px;
+      }
+
+      /* 服務項目卡片 */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+        color: #1f2937;
+      }
+
+      /* 聯絡我們表單 */
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .form-button {
+        width: 100%;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .form-button:hover {
+        background-color: #1d4ed8;
+      }
+
+      /* 頁尾 */
+      footer {
+        background-color: #1f2937;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      /* 響應式網頁設計 (手機版面調整) */
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-direction: column;
+          gap: 15px;
+        }
+        .nav-links li {
+          margin: 0 10px;
+        }
+        .hero h1 {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 導覽列 -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">MyWebsite</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#services">服務項目</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 主視覺區 -->
+    <section id="home" class="hero">
+      <h1>歡迎來到我的簡單網站</h1>
+      <p>
+        這是一個使用純 HTML 與 CSS
+        打造的精美響應式網頁。無需安裝任何複雜的框架，即可完美適應手機與電腦螢幕。
+      </p>
+      <a href="#contact" class="btn">立即聯絡</a>
+    </section>
+
+    <!-- 服務項目區 -->
+    <section id="services" class="section">
+      <h2 class="section-title">我們的服務</h2>
+      <div class="services-grid">
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>網頁設計</h3>
+          <p>為您量身打造美觀、流暢且符合品牌形象的現代化網站。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>響應式排版</h3>
+          <p>確保網站不論在手機、平板還是桌上型電腦，都能展現完美版面。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>效能優化</h3>
+          <p>精簡程式碼與圖片，提供最極致的網頁載入速度與使用者體驗。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 聯絡我們區 -->
+    <section id="contact" class="section">
+      <h2 class="section-title">聯絡我們</h2>
+      <form
+        class="contact-form"
+        onsubmit="
+          alert('訊息已送出！（這只是前端模擬效果）');
+          return false;
+        "
+      >
+        <div class="form-group">
+          <label for="name">您的姓名</label>
+          <input type="text" id="name" required placeholder="請輸入姓名" />
+        </div>
+        <div class="form-group">
+          <label for="email">電子郵件</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="example@email.com"
+          />
+        </div>
+        <div class="form-group">
+          <label for="message">留言內容</label>
+          <textarea
+            id="message"
+            rows="5"
+            required
+            placeholder="請輸入您想說的話..."
+          ></textarea>
+        </div>
+        <button type="submit" class="form-button">送出訊息</button>
+      </form>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer>
+      <p>&copy; 2026 我的簡單網站. 保留所有權利。</p>
+    </footer>
+  </body>
+</html>
